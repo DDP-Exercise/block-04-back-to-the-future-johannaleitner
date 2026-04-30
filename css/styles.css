@@ -8,3 +8,75 @@ body{
     padding: 0;
     margin: 0;
 }
+
+#digital-clock {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #222;
+    padding: 20px;
+    border-radius: 10px;
+    border: 3px solid #555;
+    width: fit-content;
+    margin: 20px auto;
+}
+
+#hour, #minute, #second {
+    font-size: 3rem;
+    color: #ff3300; /* red-ish */
+    text-shadow: 0 0 10px #ff3300; /* glow */
+    background: #111;
+    padding: 5px 15px;
+    border-radius: 5px;
+}
+
+#dots {
+    font-size: 3rem;
+    color: #ff3300;
+    text-shadow: 0 0 10px #ff3300; /* glow effect */
+    background: #111;
+    padding: 5px 15px;
+    border-radius: 5px;
+}
+
+#analogue-clock {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    border: 4px;
+    position: relative; /* hand position */
+    background: darkslategrey;
+    margin: 20px auto;
+    box-shadow: 0 0 20px rgba(0,0,0,0,0.5);
+}
+
+.hand {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: bottom;
+    background: black;
+}
+
+/* measurements of the hands; otherweise they're 0x0 pixels */
+#hour-hand {
+    width: 6px;
+    height: 50px;
+    margin-left: -3px; /* half; middle */
+    background: white;
+}
+
+#minute-hand {
+    width: 4px;
+    height: 80px;
+    margin-left: -2px;
+    background: black;
+}
+
+#second-hand {
+    width: 2px;
+    height: 90px;
+    margin-left: -1px;
+    background: orange;
+}

@@ -1,4 +1,25 @@
 "use strict";
+
+// controller = the connector
+
+import { timeModel } from "./model.time.js";
+import { analogueView } from "./view.analogue.js";
+import { digitalView } from "./view.digital.js";
+
+// initialize the views
+analogueView.init();
+digitalView.init();
+
+function tick() {
+    const hh = timeModel.getHour();
+    const mm = timeModel.getMinute();
+    const ss = timeModel.getSecond();
+
+    // Update both views
+    analogueView.update(hh, mm, ss);
+    digitalView.update(hh, mm, ss);
+}
+
 /*******************************************************
  *     Back to the Future - 100p
  *
@@ -34,4 +55,15 @@
  *******************************************************/
 
 // HINT:
-// setInterval(functionName, 1000); will call functionName() every 1000 miliseconds.
+// setInterval(functionName, 1000); will call functionName() every 1000 miliseconds; kannst noch selber definieren die function; diese function wird alle 10000 millisekunden ausgeführt
+
+// start the clock
+setInterval(tick, 1000);
+tick(); // run immediately so there's no 1-second delay
+
+// LocalStorage feature for Doc Brown
+document.getElementById('save-time').addEventListener('click', () => {
+    const timestamp = timeModel.getCurrentTime().toISOString();
+    localStorage.setItem('savedTemporalEvent', timestamp);
+    alert("Time saved to localStorage! The future is protected.");
+});

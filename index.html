@@ -6,6 +6,32 @@
     <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
-
+    <button id="save-time">save time in localStorage</button>
+    <div id="time" class="">
+        <div id="digital-clock">
+            <div id="hour">00</div>
+            <span id="dots">:</span>
+            <div id="minute">00</div>
+            <span id="dots">:</span>
+            <div id="second">00</div>
+        </div>
+        <div id="analogue-clock">
+            <!-- Zeiger -->
+            <div id="hour-hand" class="hand"></div> <!-- id für js, klasse für css -->
+            <div id="minute-hand" class="hand"></div>
+            <div id="second-hand" class="hand"></div>
+<!--            Ziffern-->
+<!--            <div class="number n12">XII</div>-->
+<!--            <div class="number n3">III</div>-->
+<!--            <div class="number n6">VI</div>-->
+<!--            <div class="number n9">IX</div>-->
+        </div>
+    </div>
+    <script type="module" src="./js/model.time.js"></script> <!-- strng + d, dublicate line -->
+    <script type="module" src="./js/view.analogue.js"></script>
+    <script type="module" src="./js/view.digital.js"></script>
+    <script type="module" src="js/controller.time.js"></script>
 </body>
 </html>
+
+<!-- zweite möglichkeit, intuitiver: zeiger in html, in css rutieren -->
